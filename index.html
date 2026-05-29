@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>foxybrown20 | OnlyFans Profile</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f8;
+            color: #242529;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+        }
+
+        /* Desktop Layout Wrapper */
+        .layout-wrapper {
+            display: flex;
+            width: 100%;
+            max-width: 1200px;
+            background-color: #ffffff;
+            min-height: 100vh;
+        }
+
+        /* Left Sidebar Navigation */
+        .sidebar-left {
+            width: 250px;
+            border-right: 1px solid #e2e8f0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .nav-item {
+            font-size: 18px;
+            font-weight: bold;
+            color: #242529;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .nav-item.muted {
+            color: #8a96a3;
+        }
+
+        /* Central Profile Stream Container */
+        .profile-container {
+            flex: 1;
+            max-width: 650px;
+            background-color: #ffffff;
+            border-right: 1px solid #e2e8f0;
+        }
+
+        /* Right Sidebar Panel */
+        .sidebar-right {
+            width: 300px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Top Banner Container */
+        .banner-container {
+            position: relative;
+            height: 240px;
+            background-image: url('banner.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-color: #e2e8f0;
+        }
+
+        /* Top Header Overlay info */
+        .banner-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 65px;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0));
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+            justify-content: space-between;
+            color: #ffffff;
+        }
+
+        .back-nav {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            cursor: pointer;
+        }
+
+        .back-arrow {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .header-meta {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header-title-row {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .verified-badge {
+            color: #00afe2;
+            font-size: 14px;
+        }
+
+        .banner-metrics {
+            display: flex;
+            gap: 12px;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-top: 2px;
+        }
+
+        .more-options {
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        /* Profile Avatar Row Layout */
+        .profile-header-row {
+            padding: 15px;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            height: 45px;
+            background-color: #ffffff;
+        }
+
+        .avatar-container {
+            position: absolute;
+            top: -75px;
+            left: 15px;
+            z-index: 5;
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid #ffffff;
+            background-image: url('profile.jpg'), url('profile.jpeg'), url('profile.PNG');
+            background-size: cover;
+            background-position: center;
+            background-color: #cbd5e1;
+        }
+
+        /* Desktop Share Action Box Button Placement */
+        .action-buttons {
+            display: flex;
+            margin-left: auto;
+            margin-top: -5px;
+        }
+
+        .share-box-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 1px solid #e2e8f0;
+            background-color: #ffffff;
+            color: #8a96a3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .share-box-btn:hover {
+            background-color: #f8fafc;
+        }
+
+        .share-icon-svg {
+            width: 22px;
+            height: 22px;
+            fill: none;
+            stroke: #00afe2;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* Identity Info Block */
+        .identity-section {
+            padding: 10px 15px 15px 15px;
+            background-color: #ffffff;
+        }
+
+        .profile-name {
+            font-size: 20px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            color: #242529;
+        }
+
+        .profile-username-row {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: #8a96a3;
+            margin-top: 3px;
+        }
+
+        /* Profile Bio Area */
+        .bio-section {
+            padding: 0 15px 15px 15px;
+            line-height: 1.5;
+            font-size: 15px;
+            color: #242529;
+            background-color: #ffffff;
+        }
+
+        .bio-para {
+            margin-bottom: 12px;
+        }
+
+        .copyright-notice {
+            font-size: 14px;
+            color: #8a96a3;
+            margin-top: 15px;
+            line-height: 1.4;
+        }
+
+        /* Toggle Link Styling */
+        .toggle-info-link {
+            color: #00afe2;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            display: inline-block;
+            margin-top: 10px;
+            text-decoration: none;
+        }
+
+        /* Main Feed Subscription Container Section */
+        .subscription-feed-area {
+            padding: 15px;
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+            background-color: #ffffff;
+        }
+
+        .subscription-headline {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #8a96a3;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Anchor wrapper link modifications for clickable buttons */
+        .whatsapp-link-wrapper {
+            text-decoration: none;
+            display: block;
+            width: 100%;
+        }
+
+        /* Custom Rounded Blue Pill Buttons */
+        .pill-subscribe-btn {
+            width: 100%;
+            background-color: #00afe2;
+            color: #ffffff;
+            border: none;
+            padding: 14px 24px;
+            border-radius: 30px;
+            font-size: 15px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .pill-bundle-btn {
+            width: 100%;
+            background-color: #00afe2;
+            color: #ffffff;
+            border: none;
+            padding: 14px 24px;
+            border-radius: 30px;
+            font-size: 15px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            margin-bottom: 12px;
+        }
+
+        .light-price-text {
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: normal;
+        }
+
+        /* Post Feed Tabs Layout */
+        .feed-tabs {
+            display: flex;
+            border-bottom: 1px solid #e2e8f0;
+            background-color: #ffffff;
+        }
+
+        .tab-item {
+            flex: 1;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 14px;
+            font-weight: bold;
+            color: #8a96a3;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        .tab-item.active {
+            color: #242529;
+            border-bottom: 3px solid #242529;
+        }
+
+        /* Locked Feed Box Frame */
+        .locked-feed {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .padlock-icon {
+            font-size: 45px;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+        }
+
+        .lock-box-border {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 500px;
+            padding: 25px;
+            background-color: #ffffff;
+            position: relative;
+        }
+
+        .inline-metrics {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            color: #8a96a3;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .action-btn {
+            width: 100%;
+            background-color: #00afe2;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="layout-wrapper">
+        <!-- Left Side Navigation Menu Panel -->
+        <div class="sidebar-left">
+            <div class="nav-item">Home</div>
+            <div class="nav-item muted">Notifications</div>
+            <div class="nav-item muted">Messages</div>
+            <div class="nav-item muted">Bookmarks</div>
+            <div class="nav-item muted">Lists</div>
+            <div class="nav-item">More</div>
+        </div>
+
+        <!-- Central Stream Block Container -->
+        <div class="profile-container">
+            <!-- Header Banner Wrapper Graphic -->
+            <div class="banner-container">
+                <div class="banner-overlay">
+                    <div class="back-nav">
+                        <span class="back-arrow">←</span>
+                        <div class="header-meta">
+                            <div class="header-title-row">
+                                <span>foxybrown20</span>
+                                <span class="verified-badge">✓</span>
+                            </div>
+                            <div class="banner-metrics">
+                                <span>🖼️ 750</span>
+                                <span>🎥 735</span>
+                                <span>🌐 14</span>
+                                <span>❤️ 102.4K</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="more-options">⋮</div>
+                </div>
+            </div>
+
+            <!-- Profile Picture Container & Share Box Icon Positioning -->
+            <div class="profile-header-row">
+                <div class="avatar-container">
+                    <div class="avatar"></div>
+                </div>
+                <div class="action-buttons">
+                    <button class="share-box-btn" title="Share">
+                        <svg class="share-icon-svg" viewBox="0 0 24 24">
+                            <rect x="3" y="11" width="14" height="10" rx="2" ry="2" transform="rotate(-10 10 16)"></rect>
+                            <path d="M14 3l5 5-5 5M19 8H9a4 4 0 0 0-4 4v3"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Identity Display Rows -->
+            <div class="identity-section">
+                <div class="profile-name">foxybrown20 <span class="verified-badge">✓</span></div>
+                <div class="profile-username-row">
+                    <span>@foxybrown20</span>
+                    <span>•</span>
+                    <span>Seen Yesterday</span>
+                </div>
+            </div>
+
+            <!-- Biography Strings Panel -->
+            <div class="bio-section">
+                <div class="bio-para">Full videos on TL and exclusive videos for purchase 🥰 Top 0% 🔥 Come join me on my slutty adventures and experiences as you are in for Anals, cumshots ,solo play, sex scenes 💦 and Etc. I need more ideas so help me along my journey. 💫</div>
+                <div class="bio-para">I do DM and don’t be afraid to chat with me</div>
+                <div class="bio-para">I post nudes n X-rated videos but you can buy customs in DM</div>
+                <div class="bio-para">I do it all 😏🔞</div>
+                
+                <div class="copyright-notice">
+                    The copyright of the material contained on my OnlyFans page (Including All Images & Video material) is owned by Myself. You do not have permission to Use, Copy, Reproduce, Print or Play any of My material outside of My OnlyFans page. Failure to comply with this Will result in Legal action taken against the person with the information used to sign up with.<br>
+                    Copyright © 2021. All rights reserved.
+                </div>
+
+                <!-- Swapped to "More info" to accurately map desktop structure layouts -->
+                <a href="#" class="toggle-info-link">More info</a>
+            </div>
+
+            <!-- Inline Feed Main Content Subscription Block Section -->
+            <div class="subscription-feed-area">
+                <div class="subscription-headline">Subscription</div>
+                
+                <!-- Primary Clickable Action (Updated Text Content to BOOK A MEET and targeted WhatsApp chat url) -->
+                <a href="https://wa.me/15754261543?text=Message%20foxy%20on%20WhatsApp." class="whatsapp-link-wrapper" target="_blank">
+                    <button class="pill-subscribe-btn">
+                        <span>BOOK A MEET</span>
+                        <span class="light-price-text">$15 per month</span>
+                    </button>
+                </a>
+
+                <div class="subscription-headline">Subscription Bundles</div>
+                
+                <!-- Bundle items wrapped to route to the exact same tracking link links -->
+                <a href="https://wa.me/15754261543?text=Message%20foxy%20on%20WhatsApp." class="whatsapp-link-wrapper" target="_blank">
+                    <button class="pill-bundle-btn">
+                        <span>3 MONTHS (5% off)</span>
+                        <span class="light-price-text">$42.75 total</span>
+                    </button>
+                </a>
+
+                <a href="https://wa.me/15754261543?text=Message%20foxy%20on%20WhatsApp." class="whatsapp-link-wrapper" target="_blank">
+                    <button class="pill-bundle-btn">
+                        <span>6 MONTHS (10% off)</span>
+                        <span class="light-price-text">$81 total</span>
+                    </button>
+                </a>
+
+                <a href="https://wa.me/15754261543?text=Message%20foxy%20on%20WhatsApp." class="whatsapp-link-wrapper" target="_blank">
+                    <button class="pill-bundle-btn">
+                        <span>12 MONTHS (30% off)</span>
+                        <span class="light-price-text">$126 total</span>
+                    </button>
+                </a>
+            </div>
+
+            <!-- Posts Counter Feed Navigation Tabs -->
+            <div class="feed-tabs">
+                <div class="tab-item active">896 Posts</div>
+                <div class="tab-item">1489 Media</div>
+            </div>
+
+            <!-- Locked Assets Placeholder Post Box Frame -->
+            <div class="locked-feed">
+                <div class="padlock-icon">🔒</div>
+                <div class="lock-box-border">
+                    <div class="inline-metrics">
+                        <span>📄 895</span>
+                        <span>🖼️ 750</span>
+                        <span>🎥 735</span>
+                        <span>🎙️ 0</span>
+                        <span>❤️ 3</span>
+                    </div>
+                    <button class="action-btn">Subscribe to see user's posts</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Sidebar Space -->
+        <div class="sidebar-right"></div>
+    </div>
+
+</body>
+</html>

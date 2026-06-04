@@ -3,533 +3,504 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>foxybrown20 | OnlyFans Profile</title>
+    <title>Exclusive Profile</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
-            background-color: #f4f6f8;
-            color: #242529;
+            background-color: #ffffff;
+            color: #000000;
             display: flex;
             justify-content: center;
-            padding: 0;
-        }
-
-        /* Desktop Layout Wrapper */
-        .layout-wrapper {
-            display: flex;
-            width: 100%;
-            max-width: 1200px;
-            background-color: #ffffff;
+            align-items: center;
             min-height: 100vh;
         }
 
-        /* Left Sidebar Navigation */
-        .sidebar-left {
-            width: 250px;
-            border-right: 1px solid #e2e8f0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
-
-        .nav-item {
-            font-size: 18px;
-            font-weight: bold;
-            color: #242529;
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-        .nav-item.muted {
-            color: #8a96a3;
-        }
-
-        /* Central Profile Stream Container */
-        .profile-container {
-            flex: 1;
-            max-width: 650px;
+        .phone-container {
+            width: 100%;
+            max-width: 450px;
             background-color: #ffffff;
-            border-right: 1px solid #e2e8f0;
-        }
-
-        /* Right Sidebar Panel */
-        .sidebar-right {
-            width: 300px;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        /* Top Banner Container */
-        .banner-container {
+            min-height: 100vh;
             position: relative;
-            height: 240px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            padding-bottom: 80px;
+        }
+
+        .banner {
+            width: 100%;
+            height: 180px;
             background-image: url('banner.jpeg');
             background-size: cover;
             background-position: center;
-            background-color: #e2e8f0;
-        }
-
-        /* Top Header Overlay info */
-        .banner-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 65px;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0));
-            display: flex;
-            align-items: center;
-            padding: 0 15px;
-            justify-content: space-between;
-            color: #ffffff;
-        }
-
-        .back-nav {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            cursor: pointer;
-        }
-
-        .back-arrow {
-            font-size: 20px;
-            font-weight: bold;
-        }
-
-        .header-meta {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .header-title-row {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            font-size: 16px;
-            font-weight: bold;
-        }
-
-        .verified-badge {
-            color: #00afe2;
-            font-size: 14px;
-        }
-
-        .banner-metrics {
-            display: flex;
-            gap: 12px;
-            font-size: 12px;
-            color: rgba(255, 255, 255, 0.9);
-            margin-top: 2px;
-        }
-
-        .more-options {
-            font-size: 20px;
-            cursor: pointer;
-        }
-
-        /* Profile Avatar Row Layout */
-        .profile-header-row {
-            padding: 15px;
             position: relative;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            height: 45px;
-            background-color: #ffffff;
+        }
+
+        .profile-header {
+            padding: 0 16px;
+            position: relative;
+            margin-top: -60px;
+            margin-bottom: 15px;
         }
 
         .avatar-container {
-            position: absolute;
-            top: -75px;
-            left: 15px;
-            z-index: 5;
-        }
-
-        .avatar {
-            width: 120px;
-            height: 120px;
+            width: 110px;
+            height: 110px;
             border-radius: 50%;
             border: 4px solid #ffffff;
-            background-image: url('profile.jpg'), url('profile.jpeg'), url('profile.PNG');
+            overflow: hidden;
+            background-color: #f0f2f5;
+            background-image: url('profile.jpeg');
             background-size: cover;
             background-position: center;
-            background-color: #cbd5e1;
+            margin-bottom: 10px;
         }
 
-        /* Desktop Share Action Box Button Placement */
-        .action-buttons {
-            display: flex;
-            margin-left: auto;
-            margin-top: -5px;
+        .profile-info h1 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            color: #242526;
         }
 
-        .share-box-btn {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            border: 1px solid #e2e8f0;
-            background-color: #ffffff;
-            color: #8a96a3;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-        
-        .share-box-btn:hover {
-            background-color: #f8fafc;
-        }
-
-        .share-icon-svg {
-            width: 22px;
-            height: 22px;
-            fill: none;
-            stroke: #00afe2;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-
-        /* Identity Info Block */
-        .identity-section {
-            padding: 10px 15px 15px 15px;
-            background-color: #ffffff;
-        }
-
-        .profile-name {
-            font-size: 20px;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            color: #242529;
-        }
-
-        .profile-username-row {
-            display: flex;
-            align-items: center;
-            gap: 6px;
+        .profile-info .username {
+            color: #8a9aa9;
             font-size: 14px;
-            color: #8a96a3;
-            margin-top: 3px;
-        }
-
-        /* Profile Bio Area */
-        .bio-section {
-            padding: 0 15px 15px 15px;
-            line-height: 1.5;
-            font-size: 15px;
-            color: #242529;
-            background-color: #ffffff;
-        }
-
-        .bio-para {
             margin-bottom: 12px;
         }
 
-        .copyright-notice {
-            font-size: 14px;
-            color: #8a96a3;
-            margin-top: 15px;
-            line-height: 1.4;
-        }
-
-        /* Toggle Link Styling */
-        .toggle-info-link {
-            color: #00afe2;
-            font-size: 14px;
-            font-weight: bold;
-            cursor: pointer;
-            display: inline-block;
-            margin-top: 10px;
-            text-decoration: none;
-        }
-
-        /* Main Feed Subscription Container Section */
-        .subscription-feed-area {
-            padding: 15px;
-            border-top: 1px solid #e2e8f0;
-            border-bottom: 1px solid #e2e8f0;
-            background-color: #ffffff;
-        }
-
-        .subscription-headline {
-            font-size: 14px;
-            font-weight: bold;
+        .bio {
+            padding: 0 16px;
             margin-bottom: 15px;
-            color: #8a96a3;
+        }
+
+        .bio-para {
+            font-size: 14px;
+            color: #242526;
+            line-height: 1.5;
+            margin-bottom: 8px;
+        }
+
+        /* Top Action Buttons Grid */
+        .actions-container {
+            display: flex;
+            gap: 12px;
+            margin: 15px 0;
+            padding: 0 16px;
+        }
+
+        .btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: opacity 0.2s ease;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+        }
+
+        .btn-telegram {
+            background-color: #0088cc;
+        }
+
+        .btn svg {
+            margin-right: 6px;
+        }
+
+        /* OnlyFans Clean Subscription Styling */
+        .subscription-section {
+            padding: 0 16px;
+            margin-top: 20px;
+        }
+
+        .sub-group-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #8a9aa9;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .subscription-wrapper {
+            margin-bottom: 12px;
+        }
+
+        /* OnlyFans Blue Pill Button Design */
+        .sub-tier-trigger {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #00aff0;
+            color: white;
+            padding: 16px 24px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            user-select: none;
+            transition: background-color 0.2s;
+        }
+
+        .sub-tier-trigger:hover {
+            background-color: #009ae0;
+        }
+
+        .tier-label {
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
-        /* Anchor wrapper link modifications for clickable buttons */
-        .whatsapp-link-wrapper {
-            text-decoration: none;
-            display: block;
-            width: 100%;
+        .tier-price {
+            font-weight: 600;
         }
 
-        /* Custom Rounded Blue Pill Buttons */
-        .pill-subscribe-btn {
-            width: 100%;
-            background-color: #00afe2;
-            color: #ffffff;
-            border: none;
-            padding: 14px 24px;
-            border-radius: 30px;
-            font-size: 15px;
-            font-weight: bold;
+        /* Platform Selection Dropdown Options */
+        .tier-dropdown-options {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            margin-bottom: 15px;
-            text-transform: uppercase;
+            gap: 10px;
+            background-color: #f7f9fa;
+            padding: 0 16px;
+            border-radius: 0 0 20px 20px;
+            border: 1px solid transparent;
+            transition: all 0.25s ease-out;
         }
 
-        .pill-bundle-btn {
-            width: 100%;
-            background-color: #00afe2;
-            color: #ffffff;
-            border: none;
-            padding: 14px 24px;
-            border-radius: 30px;
-            font-size: 15px;
-            font-weight: bold;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            margin-bottom: 12px;
+        .subscription-wrapper.active .tier-dropdown-options {
+            max-height: 80px;
+            opacity: 1;
+            padding: 14px 16px;
+            border-color: #e3e6e8;
+            border-top: none;
         }
 
-        .light-price-text {
-            color: rgba(255, 255, 255, 0.9);
-            font-weight: normal;
+        .subscription-wrapper.active .sub-tier-trigger {
+            border-radius: 20px 20px 0 0;
         }
 
-        /* Post Feed Tabs Layout */
-        .feed-tabs {
-            display: flex;
-            border-bottom: 1px solid #e2e8f0;
-            background-color: #ffffff;
-        }
-
-        .tab-item {
+        .contact-choice-btn {
             flex: 1;
-            text-align: center;
-            padding: 15px 0;
-            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 20px;
             font-weight: bold;
-            color: #8a96a3;
+            font-size: 12px;
             text-transform: uppercase;
-            cursor: pointer;
+            letter-spacing: 0.5px;
         }
 
-        .tab-item.active {
-            color: #242529;
-            border-bottom: 3px solid #242529;
+        .sub-divider {
+            height: 1px;
+            background-color: #e3e6e8;
+            margin: 16px 0;
         }
 
-        /* Locked Feed Box Frame */
-        .locked-feed {
-            padding: 50px 20px;
-            text-align: center;
+        .dropdown-arrow {
+            border: solid #8a9aa9;
+            border-width: 0 2px 2px 0;
+            display: inline-block;
+            padding: 3px;
+            transform: rotate(45deg);
+            margin-right: 4px;
+            transition: transform 0.2s;
+        }
+
+        .subscription-wrapper.active .dropdown-arrow {
+            transform: rotate(-135deg);
+        }
+
+        .divider {
+            height: 1px;
+            background-color: #e3e6e8;
+            margin: 20px 16px;
+        }
+
+        .feed-title {
+            padding: 0 16px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #8a9aa9;
+            margin-bottom: 15px;
+        }
+
+        .locked-post {
+            margin: 0 16px 15px 16px;
             background-color: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #e3e6e8;
+        }
+
+        .locked-media {
+            height: 220px;
+            background-color: #0b0e11;
             display: flex;
             flex-direction: column;
+            justify-content: center;
             align-items: center;
-        }
-
-        .padlock-icon {
-            font-size: 45px;
-            color: #cbd5e1;
-            margin-bottom: 20px;
-        }
-
-        .lock-box-border {
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            width: 100%;
-            max-width: 500px;
-            padding: 25px;
-            background-color: #ffffff;
             position: relative;
         }
 
-        .inline-metrics {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            color: #8a96a3;
-            font-size: 14px;
-            margin-bottom: 20px;
+        .blur-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('banner.jpeg');
+            background-size: cover;
+            background-position: center;
+            filter: blur(20px);
+            transform: scale(1.1);
+            opacity: 0.4;
         }
 
-        .action-btn {
-            width: 100%;
-            background-color: #00afe2;
-            color: white;
-            border: none;
-            padding: 12px;
-            border-radius: 25px;
+        .lock-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .lock-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .lock-text {
             font-size: 14px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+
+        .lock-subtext {
+            font-size: 12px;
+            color: #cbd5e1;
+        }
+
+        .post-footer {
+            padding: 12px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: #8a9aa9;
+            background-color: #f7f9fa;
+        }
+
+        .subscribe-banner {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 450px;
+            background-color: #ffffff;
+            padding: 16px;
+            border-top: 1px solid #e3e6e8;
+            box-shadow: 0 -5px 15px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .sub-text-container h4 {
+            font-size: 15px;
+            font-weight: 700;
+            color: #242526;
+        }
+
+        .sub-text-container p {
+            font-size: 12px;
+            color: #8a9aa9;
+        }
+
+        .btn-sub {
+            background-color: #0088cc;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 20px;
             font-weight: bold;
-            text-transform: uppercase;
-            cursor: pointer;
+            font-size: 13px;
         }
     </style>
 </head>
 <body>
 
-    <div class="layout-wrapper">
-        <!-- Left Side Navigation Menu Panel -->
-        <div class="sidebar-left">
-            <div class="nav-item">Home</div>
-            <div class="nav-item muted">Notifications</div>
-            <div class="nav-item muted">Messages</div>
-            <div class="nav-item muted">Bookmarks</div>
-            <div class="nav-item muted">Lists</div>
-            <div class="nav-item">More</div>
+    <div class="phone-container">
+        <div class="banner"></div>
+
+        <div class="profile-header">
+            <div class="avatar-container"></div>
+            <div class="profile-info">
+                <h1>Foxy Brown</h1>
+                <div class="username">@foxybrown20 • Active Now</div>
+            </div>
         </div>
 
-        <!-- Central Stream Block Container -->
-        <div class="profile-container">
-            <!-- Header Banner Wrapper Graphic -->
-            <div class="banner-container">
-                <div class="banner-overlay">
-                    <div class="back-nav">
-                        <span class="back-arrow">←</span>
-                        <div class="header-meta">
-                            <div class="header-title-row">
-                                <span>foxybrown20</span>
-                                <span class="verified-badge">✓</span>
-                            </div>
-                            <div class="banner-metrics">
-                                <span>🖼️ 750</span>
-                                <span>🎥 735</span>
-                                <span>🌐 14</span>
-                                <span>❤️ 102.4K</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="more-options">⋮</div>
+        <div class="bio">
+            <div class="bio-para">I do DM and don't be afraid to chat with me 😉</div>
+            <div class="bio-para">I post exclusive contents n videos but you can buy customs in DM 💬</div>
+            <div class="bio-para">I do it all 😏🔞</div>
+        </div>
+
+        <div class="actions-container">
+            <a href="https://wa.me/message/A3LRX6VVGCTNK1" target="_blank" class="btn btn-whatsapp">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.907h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.618-4.934c-.197-.1-.167-.168-.518-.574-.352-.407-.703-.815-.806-.988-.104-.173-.111-.299-.006-.473.107-.174.99-1.157 1.157-1.379.166-.221.242-.435.109-.645-.135-.21-1.085-2.61-.161-2.418-.288-.3-.577-.413-.807-.413-.153 0-.352.056-.533.248-.181.192-.693.678-.693 1.654s.711 1.916.811 2.048c.099.133 1.398 2.132 3.387 2.99.473.204.842.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+                </svg>
+                BOOK A MEET
+            </a>
+
+            <a href="https://t.me/Foxy_brown2000" target="_blank" class="btn btn-telegram">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M16 1.755a.94.94 0 0 0-.814-.934C14.04.65 11.65.25 7.994.25c-3.65 0-6.04.4-7.192.571a.94.94 0 0 0-.814.934L0 12a1 1 0 0 0 .553.894l4 2a1 1 0 0 0 1.017-.077L7.5 13.5l3.93 2.185a1 1 0 0 0 1.458-.654l3.112-13.276zM6.1 11.1l-.1 2.4c-.1.8-.9.8-1.2.2L3.3 11.3l5.8-5.1-6.1 5.3z"/>
+                </svg>
+                TELEGRAM
+            </a>
+        </div>
+
+        <div class="subscription-section">
+            <div class="sub-group-title">Subscription</div>
+            
+            <div class="subscription-wrapper">
+                <div class="sub-tier-trigger">
+                    <span class="tier-label">Subscribe</span>
+                    <span class="tier-price">$60 / month</span>
+                </div>
+                <div class="tier-dropdown-options">
+                    <a href="https://wa.me/message/A3LRX6VVGCTNK1" target="_blank" class="contact-choice-btn btn-whatsapp">WhatsApp</a>
+                    <a href="https://t.me/Foxy_brown2000" target="_blank" class="contact-choice-btn btn-telegram">Telegram</a>
                 </div>
             </div>
 
-            <!-- Profile Picture Container & Share Box Icon Positioning -->
-            <div class="profile-header-row">
-                <div class="avatar-container">
-                    <div class="avatar"></div>
-                </div>
-                <div class="action-buttons">
-                    <button class="share-box-btn" title="Share">
-                        <svg class="share-icon-svg" viewBox="0 0 24 24">
-                            <rect x="3" y="11" width="14" height="10" rx="2" ry="2" transform="rotate(-10 10 16)"></rect>
-                            <path d="M14 3l5 5-5 5M19 8H9a4 4 0 0 0-4 4v3"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
+            <div class="sub-divider"></div>
 
-            <!-- Identity Display Rows -->
-            <div class="identity-section">
-                <div class="profile-name">foxybrown20 <span class="verified-badge">✓</span></div>
-                <div class="profile-username-row">
-                    <span>@foxybrown20</span>
-                    <span>•</span>
-                    <span>Seen Yesterday</span>
+            <div class="sub-group-title">
+                <span>Subscription Bundles</span>
+                <i class="dropdown-arrow"></i>
+            </div>
+            
+            <div class="subscription-wrapper">
+                <div class="sub-tier-trigger">
+                    <span class="tier-label">3 Months (5% off)</span>
+                    <span class="tier-price">$120.75 total</span>
+                </div>
+                <div class="tier-dropdown-options">
+                    <a href="https://wa.me/message/A3LRX6VVGCTNK1" target="_blank" class="contact-choice-btn btn-whatsapp">WhatsApp</a>
+                    <a href="https://t.me/Foxy_brown2000" target="_blank" class="contact-choice-btn btn-telegram">Telegram</a>
                 </div>
             </div>
-
-            <!-- Biography Strings Panel -->
-            <div class="bio-section">
-                <div class="bio-para">Full videos on TL and exclusive videos for purchase 🥰 Top 0% 🔥 Come join me on my slutty adventures and experiences as you are in for Anals, cumshots ,solo play, sex scenes 💦 and Etc. I need more ideas so help me along my journey. 💫</div>
-                <div class="bio-para">I do DM and don’t be afraid to chat with me</div>
-                <div class="bio-para">I post nudes n X-rated videos but you can buy customs in DM</div>
-                <div class="bio-para">I do it all 😏🔞</div>
-                
-                <div class="copyright-notice">
-                    The copyright of the material contained on my OnlyFans page (Including All Images & Video material) is owned by Myself. You do not have permission to Use, Copy, Reproduce, Print or Play any of My material outside of My OnlyFans page. Failure to comply with this Will result in Legal action taken against the person with the information used to sign up with.<br>
-                    Copyright © 2021. All rights reserved.
+            
+            <div class="subscription-wrapper">
+                <div class="sub-tier-trigger">
+                    <span class="tier-label">6 Months (10% off)</span>
+                    <span class="tier-price">$150 total</span>
                 </div>
-
-                <!-- Swapped to "More info" to accurately map desktop structure layouts -->
-                <a href="#" class="toggle-info-link">More info</a>
+                <div class="tier-dropdown-options">
+                    <a href="https://wa.me/message/A3LRX6VVGCTNK1" target="_blank" class="contact-choice-btn btn-whatsapp">WhatsApp</a>
+                    <a href="https://t.me/Foxy_brown2000" target="_blank" class="contact-choice-btn btn-telegram">Telegram</a>
+                </div>
             </div>
-
-            <!-- Inline Feed Main Content Subscription Block Section -->
-            <div class="subscription-feed-area">
-                <div class="subscription-headline">Subscription</div>
-                
-                <!-- Primary Clickable Action (Updated Text Content to BOOK A MEET and targeted WhatsApp chat url) -->
-                <a href="https://wa.me/15754261543?text=Message%20foxy%20on%20WhatsApp." class="whatsapp-link-wrapper" target="_blank">
-                    <button class="pill-subscribe-btn">
-                        <span>BOOK A MEET</span>
-                        <span class="light-price-text">$15 per month</span>
-                    </button>
-                </a>
-
-                <div class="subscription-headline">Subscription Bundles</div>
-                
-                <!-- Bundle items wrapped to route to the exact same tracking link links -->
-                <a href="https://wa.me/15754261543?text=Message%20foxy%20on%20WhatsApp." class="whatsapp-link-wrapper" target="_blank">
-                    <button class="pill-bundle-btn">
-                        <span>3 MONTHS (5% off)</span>
-                        <span class="light-price-text">$42.75 total</span>
-                    </button>
-                </a>
-
-                <a href="https://wa.me/15754261543?text=Message%20foxy%20on%20WhatsApp." class="whatsapp-link-wrapper" target="_blank">
-                    <button class="pill-bundle-btn">
-                        <span>6 MONTHS (10% off)</span>
-                        <span class="light-price-text">$81 total</span>
-                    </button>
-                </a>
-
-                <a href="https://wa.me/15754261543?text=Message%20foxy%20on%20WhatsApp." class="whatsapp-link-wrapper" target="_blank">
-                    <button class="pill-bundle-btn">
-                        <span>12 MONTHS (30% off)</span>
-                        <span class="light-price-text">$126 total</span>
-                    </button>
-                </a>
-            </div>
-
-            <!-- Posts Counter Feed Navigation Tabs -->
-            <div class="feed-tabs">
-                <div class="tab-item active">896 Posts</div>
-                <div class="tab-item">1489 Media</div>
-            </div>
-
-            <!-- Locked Assets Placeholder Post Box Frame -->
-            <div class="locked-feed">
-                <div class="padlock-icon">🔒</div>
-                <div class="lock-box-border">
-                    <div class="inline-metrics">
-                        <span>📄 895</span>
-                        <span>🖼️ 750</span>
-                        <span>🎥 735</span>
-                        <span>🎙️ 0</span>
-                        <span>❤️ 3</span>
-                    </div>
-                    <button class="action-btn">Subscribe to see user's posts</button>
+            
+            <div class="subscription-wrapper">
+                <div class="sub-tier-trigger">
+                    <span class="tier-label">12 Months (30% off)</span>
+                    <span class="tier-price">$250 total</span>
+                </div>
+                <div class="tier-dropdown-options">
+                    <a href="https://wa.me/message/A3LRX6VVGCTNK1" target="_blank" class="contact-choice-btn btn-whatsapp">WhatsApp</a>
+                    <a href="https://t.me/Foxy_brown2000" target="_blank" class="contact-choice-btn btn-telegram">Telegram</a>
                 </div>
             </div>
         </div>
 
-        <!-- Right Sidebar Space -->
-        <div class="sidebar-right"></div>
+        <div class="divider"></div>
+        <div class="feed-title">RECENT POSTS</div>
+
+        <div class="locked-post">
+            <div class="locked-media">
+                <div class="blur-overlay"></div>
+                <div class="lock-content">
+                    <div class="lock-icon">🔒</div>
+                    <div class="lock-text">Locked Video Post</div>
+                    <div class="lock-subtext">Unlock by messaging on Telegram or WhatsApp</div>
+                </div>
+            </div>
+            <div class="post-footer">
+                <span>❤️ 1.2k Likes</span>
+                <span>💬 48 Comments</span>
+            </div>
+        </div>
+
+        <div class="locked-post">
+            <div class="locked-media">
+                <div class="blur-overlay" style="opacity: 0.25;"></div>
+                <div class="lock-content">
+                    <div class="lock-icon">🔒</div>
+                    <div class="lock-text">Private Premium Photoset</div>
+                    <div class="lock-subtext">Available upon meeting request</div>
+                </div>
+            </div>
+            <div class="post-footer">
+                <span>❤️ 942 Likes</span>
+                <span>💬 29 Comments</span>
+            </div>
+        </div>
+
+        <div class="subscribe-banner">
+            <div class="sub-text-container">
+                <h4>Want Full Access?</h4>
+                <p>Chat directly to get verified access</p>
+            </div>
+            <a href="https://t.me/Foxy_brown2000" target="_blank" class="btn-sub">GO LIVE</a>
+        </div>
     </div>
+
+    <script>
+        document.querySelectorAll('.sub-tier-trigger').forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                const wrapper = trigger.parentElement;
+                
+                document.querySelectorAll('.subscription-wrapper').forEach(item => {
+                    if (item !== wrapper) item.classList.remove('active');
+                });
+
+                wrapper.classList.toggle('active');
+            });
+        });
+    </script>
 
 </body>
 </html>
